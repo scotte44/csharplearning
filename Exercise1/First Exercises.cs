@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Exercise1
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -101,21 +101,22 @@ namespace Exercise1
                 Console.Write("How Fast was the car going? ");
                 var carSpeed = Convert.ToInt32(Console.ReadLine());
 
+                
                 if (carSpeed < speedLimit)
-                    Console.WriteLine("Car Speed is OK");
-                else;
+                    Console.WriteLine("Okay");
+                else
                 {
-                    const int kmPerDemeritPoint = 5;
-                    var demeritPoints = (carSpeed - speedLimit) / kmPerDemeritPoint;
+                    const int perKM = 5;
+                    var demeritPoints = (carSpeed - speedLimit) / perKM;
                     if (demeritPoints > 12)
                         Console.WriteLine("License Suspended");
                     else
                         Console.WriteLine("You deserve {0} Demerit Points", demeritPoints);
 
+                    // Unsure why the IF Statement isn't working. Checked against solutions and there aren't any errors.
                 }
-                         
             }
-         
+                     
         }
     }
 }
