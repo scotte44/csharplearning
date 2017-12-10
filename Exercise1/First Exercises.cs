@@ -112,8 +112,7 @@ namespace Exercise1
                         Console.WriteLine("License Suspended");
                     else
                         Console.WriteLine("You deserve {0} Demerit Points", demeritPoints);
-
-                    // Unsure why the IF Statement isn't working. Checked against solutions and there aren't any errors.
+                                        
                 }
             }
                      
