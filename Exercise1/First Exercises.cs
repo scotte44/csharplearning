@@ -112,6 +112,7 @@ namespace Exercise1
                         Console.WriteLine("License Suspended");
                     else
                         Console.WriteLine("You deserve {0} Demerit Points", demeritPoints);
+
                                         
                 }
             }
