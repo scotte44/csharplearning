@@ -11,7 +11,7 @@ namespace Second_Exercises
         static void Main(string[] args)
         {
 
-            // Exercise 5 - Facebook Post
+            // Exercise 5 - Facebook Post - Complete
 
             {
 
@@ -19,22 +19,23 @@ namespace Second_Exercises
 
                 while (true)
                 {
-                    Console.Write("Enter a Name or Press Enter to Exit: ");
-
+                    Console.WriteLine("Enter a Name or Hit Enter to Exit");
                     var input = Console.ReadLine();
+
                     if (String.IsNullOrWhiteSpace(input))
                         break;
-                    names.Add(input);
+                    else
+                        names.Add(input);
+
                 }
 
                 if (names.Count > 2)
-                    Console.WriteLine("{0}, {1} and {2} like you post", names[0], names[1], names[2]);
+                    Console.WriteLine("{0}, {1} and {2} liked your post", names[0], names[1], names[2]);
                 else if (names.Count == 2)
-                    Console.WriteLine("{0} and {1} like your post", names[0], names[1]);
+                    Console.WriteLine("{0} and {1} liked your post", names[0], names[1]);
                 else if (names.Count == 1)
-                    Console.WriteLine("{0} likes your post", names[0]);
-
-                Console.WriteLine();
+                    Console.WriteLine("{0} liked your post", names[0]);
+                      
 
             }
 
@@ -42,64 +43,70 @@ namespace Second_Exercises
 
             {
                 Console.Write("Enter Your Name: ");
-                var name = Console.ReadLine();
+                var input = Console.ReadLine();
 
-                var nameArray = new char[name.Length];
-                for (var i = name.Length; i > 0; i--) 
-                    nameArray[name.Length - i] = name[i - 1]; 
+                var nameArray = new char[input.Length];
+                for (var i = input.Length; i > 0; i--)
+                    nameArray[input.Length - i] = input[i - 1];
 
                 var reversed = new string(nameArray);
-                Console.WriteLine("Reversed Name: " + reversed);
-                                                
+                Console.WriteLine("Your Name Reversed is: " + reversed);
+
+
+
                 
             }
 
             {
 
-                // Exercise 7 - User Enters 5 Numbers. If the Number is Dup, display an error message. Once User has entered 5 unique numbers, sort and display.
+                // Exercise 7
+                // User Enters 5 Numbers. If the Number is Dup, display an error message. Once User has entered 5 unique numbers, sort and display.
 
                 var numbers = new List<int>();
 
                 while (numbers.Count < 5)
                 {
-                    Console.Write("Enter a Number: ");
+                    Console.WriteLine("Enter a Number: ");
                     var number = Convert.ToInt32(Console.ReadLine());
-                    if (numbers.Contains(number))
-
                     {
-
-                        Console.Write("You've already entered {0}, Try Again. ", number);
-                        continue;
+                        if (numbers.Contains(number))
+                            Console.WriteLine("Duplicate! Enter Another Number: .");
+                        else
+                            continue;
 
                     }
 
                     numbers.Add(number);
 
                 }
-                    numbers.Sort();
+
+                numbers.Sort();
 
                 foreach (var number in numbers)
                     Console.WriteLine(number);
-                                               
+                                 
 
                 }
 
+                
+
             {
+                // Exercise 8
                 // Write a Program which asks the User to Continuously enter a number or type "Quit" to exit. Can include Dups. Display unique numbers.
 
                 var numbers = new List<int>();
 
                 while (true)
                 {
-                    Console.Write("Enter a Number, or type Quit to Exit: ");
-                    var input = Console.ReadLine();
+                    Console.WriteLine("Enter a Number: ");
+                    var number = Console.ReadLine();
 
-                    if (input.ToLower() == "quit")
+                    if (number.ToLower() == "quit")
                         break;
 
                     else
-                        numbers.Add(Convert.ToInt32(input));
-
+                        numbers.Add(Convert.ToInt32(number));
+                                        
                 }
 
                 var uniqueNumbers = new List<int>();
@@ -110,12 +117,13 @@ namespace Second_Exercises
                         uniqueNumbers.Add(number);
                 }
 
-                Console.WriteLine("Unique Numbers: ");
+                Console.WriteLine("Unique Numbers are: ");
                 foreach (var number in uniqueNumbers)
                     Console.WriteLine(number);
             }
 
             {
+                // Exercise 9
                 // Program that asks the User to Supply a List of Comma Seperated Values, If Empty or < 5, display Invalid List and ask to retry. Otherwise Display 3 Smallest Int.
 
                 string[] elements;
